@@ -1358,16 +1358,55 @@ button {
 }
 
 .contact-icon {
-  font-size: 1.5rem;
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color: var(--orange-soft);
-  color: var(--orange-dark);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.contact-icon.icon-map {
+  background-color: var(--orange-soft);
+  color: var(--orange-dark);
+  border: 1px solid rgba(232, 94, 5, 0.2);
+}
+
+.contact-icon.icon-wa {
+  background-color: #dcfce7;
+  color: #15803d;
+  border: 1px solid rgba(21, 128, 61, 0.2);
+}
+
+.contact-icon.icon-ig {
+  background-color: #fce7f3;
+  color: #db2777;
+  border: 1px solid rgba(219, 39, 119, 0.2);
+}
+
+.contact-icon.icon-fb {
+  background-color: #dbeafe;
+  color: #2563eb;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+.contact-icon.icon-web {
+  background-color: #e0f2fe;
+  color: #0284c7;
+  border: 1px solid rgba(2, 132, 199, 0.2);
+}
+
+.contact-item:hover .contact-icon {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 4px 12px rgba(31, 30, 29, 0.08);
 }
 
 .contact-details h4 {
