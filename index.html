@@ -1,641 +1,759 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PPTQ Jamal Yusuf Al-Haddad</title>
-    <link rel="icon" type="image/png" href="assets/img/logo.png">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#E85E05">
+  
+  <title>PSB 2027/2028 - PPTQ Jamal Yusuf Al-Haddad | Pondok Tahfidz Khusus Putri</title>
+  <meta name="description" content="Penerimaan Santri Baru (PSB) TP 2027/2028 PPTQ Jamal Yusuf Al-Haddad. Pondok Tahfidz Khusus Putri di Tri Mukti Jaya, Banjar Agung, Tulang Bawang, Lampung.">
+  <meta name="keywords" content="PPTQ Jamal Yusuf Al-Haddad, pondok tahfidz putri lampung, psb 2027, pesantren tahfidz tulang bawang">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pptqjamalyusuf.github.io/">
+  <meta property="og:title" content="PPTQ Jamal Yusuf Al-Haddad - Pondok Tahfidz Khusus Putri">
+  <meta property="og:description" content="Bersama Kami, Putri Anda Dekat Dengan Al-Qur'an. Pendaftaran Santri Baru TP 2027/2028 telah dibuka.">
+  <meta property="og:image" content="assets/img/logo.png">
 
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+  <!-- Fonts: Preconnect & Subset -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #2c5530, #3d7c47);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        .logo img {
-            height: 48px;
-            width: auto;
-            margin-right: 12px;
-            vertical-align: middle;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s;
-        }
-
-        .nav-links a:hover {
-            opacity: 0.8;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(44, 85, 48, 0.9), rgba(61, 124, 71, 0.9)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f0f8ff" width="1200" height="600"/><path fill="%233d7c47" opacity="0.1" d="M0,200 Q300,150 600,200 T1200,200 L1200,600 L0,600 Z"/></svg>');
-            background-size: cover;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: white;
-        }
-        .hero-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #ffd700;
-            color: #333;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: transform 0.3s;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-        }
-
-        /* Sections */
-        .section {
-            padding: 4rem 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            color: #2c5530;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background: #ffd700;
-            margin: 10px auto;
-        }
-
-        /* About Section */
-        .about {
-            background: #f8f9fa;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .vision-mission h3 {
-            color: #2c5530;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .vision-mission p {
-            margin-bottom: 1.5rem;
-            font-weight: bold;
-            color: #555;
-        }
-
-        .vision-mission ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .vision-mission li {
-            margin-bottom: 0.8rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .vision-mission li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #ffd700;
-            font-weight: bold;
-        }
-
-        .about-icon {
-            text-align: center;
-            font-size: 6rem;
-            color: #2c5530;
-            opacity: 0.8;
-        }
-
-        /* Programs Section */
-        .programs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .program-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .program-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .program-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #2c5530;
-        }
-
-        .program-card h3 {
-            color: #2c5530;
-            margin-bottom: 1rem;
-        }
-
-        /* Info Section */
-        .info {
-            background: #f8f9fa;
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .info-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .info-card h3 {
-            color: #2c5530;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .requirements-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .requirements-list li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .requirements-list li:last-child {
-            border-bottom: none;
-        }
-
-        .fee-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .fee-table tr {
-            border-bottom: 1px solid #eee;
-        }
-
-        .fee-table td {
-            padding: 0.8rem 0;
-        }
-
-        .fee-table .total {
-            background: #2c5530;
-            color: white;
-            font-weight: bold;
-        }
-
-        .period-box {
-            background: linear-gradient(135deg, #2c5530, #3d7c47);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            text-align: center;
-            margin: 1rem 0;
-        }
-
-        /* Contact Section */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-
-        .contact-info {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 1.5rem;
-            gap: 1rem;
-        }
-
-        .contact-icon {
-            font-size: 1.5rem;
-            color: #2c5530;
-            min-width: 30px;
-        }
-
-        .steps-card {
-            background: linear-gradient(135deg, #2c5530, #3d7c47);
-            color: white;
-            padding: 2rem;
-            border-radius: 10px;
-        }
-
-        .steps-card h3 {
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .steps-card ol {
-            padding-left: 1.2rem;
-        }
-
-        .steps-card li {
-            margin-bottom: 1rem;
-        }
-
-        /* Footer */
-        footer {
-            background: #2c5530;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
-            }
-
-            .about-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-icon {
-                font-size: 4rem;
-                order: -1;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
-            }
-        }
-
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+  <!-- Core Stylesheet (Mobile-First) -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">
-                    <img src="assets/img/logo.png" alt="Logo PPTQ Jamal Yusuf Al-Haddad">
-                    PPTQ Jamal Yusuf Al-Haddad
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#home">Beranda</a></li>
-                    <li><a href="#about">Tentang</a></li>
-                    <li><a href="#programs">Program</a></li>
-                    <li><a href="#info">Pendaftaran</a></li>
-                    <li><a href="#contact">Kontak</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content fade-in">
-                <img src="assets/img/logo.png" alt="Logo PPTQ" style="display:block;margin:0 auto 12px auto;height:100px;width:auto;">
-                <h1>Pusat Pendidikan Tahfidzul Qur'an<br>Jamal Yusuf Al-Haddad</h1>
-                <p> Terwujudnya generasi Qur’ani yang mampu membaca, menghafal, memahami, dan mengamalkan Al-Qur’an dengan benar</p>
-                <a href="https://forms.gle/mSdwF1ryhwFZVzjF6" target="_blank" class="cta-button">Daftar Sekarang</a>
-            </div>
-        </div>
-
-    </section>
-
-<section id="brosur" class="section brosur">
+  <!-- =======================================================================
+       Header & Navbar
+       ======================================================================= -->
+  <header class="site-header" id="siteHeader">
     <div class="container">
-        <h2 class="section-title fade-in">Brosur Pesantren</h2>
-        <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
-            <a href="assets/img/Brosur1.png" target="_blank" title="Lihat detail Brosur 1">
-                <img src="assets/img/Brosur1.png" alt="Brosur 1" style="width:100%;max-width:500px;box-shadow:0 2px 8px rgba(44,85,48,0.15);border-radius:12px;cursor:pointer;">
-                <div style="text-align:center; margin-top:8px; color:#2c5530; font-size:1.05rem;">
-                    Klik untuk melihat lebih jelas
-                </div>
-            </a>
-            <a href="assets/img/Brosur2.png" target="_blank" title="Lihat detail Brosur 2">
-                <img src="assets/img/Brosur2.png" alt="Brosur 2" style="width:100%;max-width:500px;box-shadow:0 2px 8px rgba(44,85,48,0.15);border-radius:12px;cursor:pointer;">
-                <div style="text-align:center; margin-top:8px; color:#2c5530; font-size:1.05rem;">
-                    Klik untuk melihat lebih jelas
-                </div>
-            </a>
-        </div>
+      <div class="nav-wrapper">
+        <a href="#home" class="brand" aria-label="PPTQ Jamal Yusuf Al-Haddad">
+          <img src="assets/img/logo.png" alt="Logo PPTQ" class="brand-logo" width="40" height="40">
+          <div class="brand-text">
+            <span class="brand-name">PPTQ Jamal Yusuf</span>
+            <span class="brand-tag">Tahfidz Putri</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="desktop-nav" aria-label="Navigasi Utama Desktop">
+          <ul class="desktop-nav-links">
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#profil">Tentang</a></li>
+            <li><a href="#program">Program</a></li>
+            <li><a href="#fasilitas">Fasilitas</a></li>
+            <li><a href="#biaya">Biaya</a></li>
+          </ul>
+          <a href="https://forms.gle/mSdwF1ryhwFZVzjF6" target="_blank" rel="noopener" class="btn btn-primary">Daftar</a>
+        </nav>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobileDrawer">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </button>
+      </div>
     </div>
-</section>
+  </header>
 
-    <section id="about" class="section about">
-        <div class="container">
-            <h2 class="section-title fade-in">Tentang Pesantren</h2>
-            <div class="about-grid">
-                <div class="vision-mission fade-in">
-                    <h3>🎯 Profil Singkat</h3>
-                     <p style="text-align:justify; text-justify:inter-word; font-weight:normal;"">Pusat Pendidikan Tahfidzul Qur’an (PPTQ) Jamal Yusuf Al Haddad adalah Pondok tahfidz khusus Putri didirikan oleh Yayasan Jamal Yusuf Al Haddad pada tahun 2018, dengan Bapak Arnan Jaya, S.K.M., M.Kes sebagai Pembina dan sudah memiliki izin operasional pondok dari Kemenag pada tahun 2023. Terletak di  Desa Tri Mukti Jaya, Kec. Banjar Agung, Kab. Tulang Bawang, Lampung.
+  <!-- Mobile Drawer Menu (Fullscreen) -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <ul class="mobile-nav-links">
+      <li><a href="#home">Beranda <span>→</span></a></li>
+      <li><a href="#mengapa">Mengapa Qur'an <span>→</span></a></li>
+      <li><a href="#profil">Tentang Pesantren <span>→</span></a></li>
+      <li><a href="#program">4 Pilar Program <span>→</span></a></li>
+      <li><a href="#fasilitas">Fasilitas <span>→</span></a></li>
+      <li><a href="#alur">Alur Pendaftaran <span>→</span></a></li>
+      <li><a href="#biaya">Rincian Biaya <span>→</span></a></li>
+      <li><a href="#periode">Periode Pendaftaran <span>→</span></a></li>
+      <li><a href="#brosur">Brosur <span>→</span></a></li>
+      <li><a href="#kontak">Kontak <span>→</span></a></li>
+    </ul>
+    <div class="mobile-drawer-footer">
+      <a href="https://forms.gle/mSdwF1ryhwFZVzjF6" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;">
+        Daftar Sekarang
+      </a>
+      <a href="https://wa.me/6282258588514" target="_blank" rel="noopener" class="btn btn-whatsapp" style="width:100%;">
+        Tanya via WhatsApp
+      </a>
+    </div>
+  </div>
 
-                     </p>
-                    
-                    <h3>🎯 MISI</h3>
-                    <ul>
-                        <li>Terselenggaranya dengan optimal halaqah tahsin</li>
-                        <li>Terselenggaranya dengan optimal halaqah tahfidz Al-Qur'an</li>
-                        <li>Terselenggaranya pembelajaran bahasa Arab dan ilmu-ilmu diniyah</li>
-                        <li>Santriwati wajib asrama</li>
-                        <li>Tempat tinggal yang kondusif, bersih, indah, dan sehat</li>
-                        <li>Mencerdaskan anak bangsa dengan hafal Al-Qur'an mutqin, aqidah benar, dan berakhlak Qur'ani</li>
-                    </ul>
-                </div>
-                <div class="about-icon fade-in">
-                    <img src="assets/img/Masjid.jpg" alt="Pesantren Photo" style="max-width: 100%; height: 450px; object-fit: cover; border-radius: 12px; box-shadow: 0 2px 8px rgba(44,85,48,0.15);">
-                </div>
-            </div>
+  <main>
+    <!-- =====================================================================
+         Hero Section
+         ===================================================================== -->
+    <section class="hero hero-editorial" id="home">
+      <div class="hero-overlay"></div>
+      <div class="container hero-container">
+        <div class="hero-editorial-content fade-up">
+          
+          <div class="hero-badge-pill">
+            <span class="pulse-dot"></span>
+            <span>PSB 2027/2028 Dibuka</span>
+          </div>
+
+          <p class="hero-bismillah" lang="ar">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+
+          <h1 class="hero-headline">
+            Bersama Kami, Putri Anda Dekat Dengan <span class="highlight-orange">Al-Qur'an</span>
+          </h1>
+
+          <p class="hero-subheadline">
+            Pondok Tahfidz Khusus Putri &middot; Tri Mukti Jaya, Banjar Agung, Tulang Bawang, Lampung
+          </p>
+
+          <div class="hero-ctas">
+            <a href="https://forms.gle/mSdwF1ryhwFZVzjF6" target="_blank" rel="noopener" class="btn btn-primary">
+              Daftar Sekarang
+            </a>
+            <a href="https://wa.me/6282258588514" target="_blank" rel="noopener" class="btn btn-glass">
+              Tanya via WhatsApp
+            </a>
+          </div>
+
+          <div class="hero-chips">
+            <span class="hero-chip">🏛️ Est. 2018</span>
+            <span class="hero-chip">📜 Izin Kemenag 2023</span>
+            <span class="hero-chip">🧕 Khusus Putri</span>
+            <span class="hero-chip highlight-chip" id="heroCardVal">📅 Gelombang I: Dibuka</span>
+          </div>
+
         </div>
+      </div>
+
+      <!-- Ambient photo caption bar at bottom of hero -->
+      <div class="hero-live-badge" aria-hidden="true">
+        <span class="pulse-live"></span>
+        <span>Halaman Pesantren &bull; Tasmi' 5 Juz Sekali Duduk</span>
+      </div>
     </section>
 
-    <section id="programs" class="section programs">
-        <div class="container">
-            <h2 class="section-title fade-in">Program Pesantren</h2>
-            <div class="programs-grid">
-                <div class="program-card fade-in">
-                    <div class="program-icon">📖</div>
-                    <h3>Tahfidz Al-Qur'an</h3>
-                    <p>Program utama menghafal Al-Qur'an dengan metode mutqin untuk menciptakan generasi penghafal Qur'an berkualitas</p>
-                </div>
-                <div class="program-card fade-in">
-                    <div class="program-icon">🔊</div>
-                    <h3>Tahsin Al-Qur'an</h3>
-                    <p>Pembelajaran membaca Al-Qur'an dengan benar sesuai kaidah tajwid dan makhorijul huruf</p>
-                </div>
-                <div class="program-card fade-in">
-                    <div class="program-icon">📚</div>
-                    <h3>Pembelajaran Diniyah</h3>
-                    <p>Studi ilmu-ilmu agama Islam termasuk fiqh, hadits, tafsir, dan aqidah</p>
-                </div>
-                <div class="program-card fade-in">
-                    <div class="program-icon">🌍</div>
-                    <h3>Bahasa Arab</h3>
-                    <p>Pembelajaran bahasa Arab intensif untuk memahami Al-Qur'an dan literatur Islam</p>
-                </div>
-            </div>
+    <!-- Strip Kutipan Hadits -->
+    <div class="quote-strip">
+      <div class="container">
+        <p class="quote-arabic" lang="ar">خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ</p>
+        <p class="quote-translation">"Sebaik-baik kalian adalah yang mempelajari Al-Qur'an dan mengajarkannya."</p>
+        <p class="quote-reference">HR. Bukhari no. 5027</p>
+      </div>
+    </div>
+
+    <!-- =====================================================================
+         Section 1: Mengapa Al-Qur'an?
+         ===================================================================== -->
+    <section class="section section-bg-cream" id="mengapa">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="section-badge">Muqaddimah</span>
+          <h2 class="section-title">Mengapa <span>Al-Qur'an?</span></h2>
+          <p class="section-desc">Pondasi utama pembentukan jiwa dan karakter anak di zaman penuh tantangan.</p>
         </div>
+
+        <div class="why-grid">
+          <div class="card why-card fade-up">
+            <div class="why-num">1</div>
+            <div>
+              <h3>Generasi Qur'ani Makin Dibutuhkan</h3>
+              <p>Di era fitnah dan gempuran teknologi, benteng terkuat seorang anak adalah pemahaman dan hafalan ayat-ayat Allah.</p>
+            </div>
+          </div>
+
+          <div class="card why-card fade-up">
+            <div class="why-num">2</div>
+            <div>
+              <h3>Warisan Terbaik Orang Tua</h3>
+              <p>Hafalan Al-Qur'an adalah mahkota kemuliaan abadi yang dipersembahkan seorang anak shalihah kepada orang tuanya di akhirat.</p>
+            </div>
+          </div>
+
+          <div class="card why-card fade-up">
+            <div class="why-num">3</div>
+            <div>
+              <h3>Jalan Ittiba' Kepada Nabi ﷺ</h3>
+              <p>Bukan sekadar hafalan, ini adalah ikhtiar nyata membimbing generasi putri berjalan di atas sunnah Rasulullah ﷺ.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="info" class="section info">
-        <div class="container">
-            <h2 class="section-title fade-in">Informasi Pendaftaran</h2>
-            <div class="info-grid">
-                <div class="info-card fade-in">
-                    <h3>📋 Persyaratan</h3>
-                    <ul class="requirements-list">
-                        <li><span style="color: #ffd700;">✓</span> Sehat jasmani dan rohani</li>
-                        <li><span style="color: #ffd700;">✓</span> Usia min 12 tahun (SMP), 15 tahun (SMA)</li>
-                        <li><span style="color: #ffd700;">✓</span> Keinginan kuat untuk menghafal</li>
-                        <li><span style="color: #ffd700;">✓</span> Surat kesanggupan</li>
-                        <li><span style="color: #ffd700;">✓</span> Fotokopi ijazah terakhir</li>
-                        <li><span style="color: #ffd700;">✓</span> Fotokopi KK dan KTP orangtua</li>
-                        <li><span style="color: #ffd700;">✓</span> Pas foto 3x4 </li>
-                        <li><span style="color: #ffd700;">✓</span> Surat keterangan sehat</li>
-                    </ul>
-                </div>
-                
-                <div class="info-card fade-in">
-                    <h3>💰 Rincian Biaya</h3>
-                    <table class="fee-table">
-                        <tr><td>Sarpras</td><td style="text-align: right;">Rp 5.000.000</td></tr>
-                        <tr><td>Kegiatan setahun</td><td style="text-align: right;">Rp 500.000</td></tr>
-                        <tr><td>Kesehatan setahun</td><td style="text-align: right;">Rp 500.000</td></tr>
-                        <tr><td>Seragam</td><td style="text-align: right;">Rp 1.000.000</td></tr>
-                        <tr><td>Buku</td><td style="text-align: right;">Rp 650.000</td></tr>
-                        <tr><td>SPP Bulanan</td><td style="text-align: right;">Rp 1.000.000</td></tr>
-                        <tr><td>Formulir</td><td style="text-align: right;">Rp 200.000</td></tr>
-                        <tr class="total"><td>Total</td><td style="text-align: right;">Rp 8.850.000</td></tr>
-                    </table>
-                </div>
-            </div>
-            
-            <div class="period-box fade-in">
-                <h3>📅 Periode Pendaftaran 2027/2028</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
-                    <div>
-                        <strong>Gelombang I</strong><br>
-                        01 November 2027 - 31 Januari 2028
-                    </div>
-                    <div>
-                        <strong>Gelombang II</strong><br>
-                        1 Februari - 30 Juni 2028
-                    </div>
-                </div>
-            </div>
+    <!-- =====================================================================
+         Section 2: Tentang Pesantren (Profil Singkat + Misi + Foto Drone)
+         ===================================================================== -->
+    <section class="section section-bg-white" id="profil">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="section-badge">Mengenal Kami</span>
+          <h2 class="section-title section-title-accent">Tentang <span>Pesantren</span></h2>
         </div>
+
+        <div class="about-grid fade-up">
+          <!-- Kolom Kiri: Profil Singkat & MISI -->
+          <div class="about-text-col">
+            <div class="about-block">
+              <h3 class="about-subheading">🎯 Profil Singkat</h3>
+              <p class="about-desc">
+                Pusat Pendidikan Tahfidzul Qur’an (PPTQ) Jamal Yusuf Al Haddad adalah Pondok tahfidz khusus Putri didirikan oleh Yayasan Jamal Yusuf Al Haddad pada tahun 2018, dengan Bapak Arnan Jaya, S.K.M., M.Kes sebagai Pembina dan sudah memiliki izin operasional pondok dari Kemenag pada tahun 2023. Terletak di Desa Tri Mukti Jaya, Kec. Banjar Agung, Kab. Tulang Bawang, Lampung.
+              </p>
+            </div>
+
+            <div class="about-block">
+              <h3 class="about-subheading">🎯 MISI</h3>
+              <ul class="about-misi-list">
+                <li>Terselenggaranya dengan optimal halaqah tahsin</li>
+                <li>Terselenggaranya dengan optimal halaqah tahfidz Al-Qur'an</li>
+                <li>Terselenggaranya pembelajaran bahasa Arab dan ilmu-ilmu diniyah</li>
+                <li>Santriwati wajib asrama</li>
+                <li>Tempat tinggal yang kondusif, bersih, indah, dan sehat</li>
+                <li>Mencerdaskan anak bangsa dengan hafal Al-Qur'an mutqin, aqidah benar, dan berakhlak Qur'ani</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Kolom Kanan: Foto Drone Udara Gedung Pesantren -->
+          <div class="about-image-col">
+            <div class="about-image-card">
+              <picture>
+                <source srcset="assets/img/Masjid.webp" type="image/webp">
+                <img src="assets/img/Masjid.jpg" alt="Foto Udara Gedung Pesantren PPTQ Jamal Yusuf Al-Haddad" class="about-drone-img" loading="lazy">
+              </picture>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="contact" class="section contact">
-        <div class="container">
-            <h2 class="section-title fade-in">Hubungi Kami</h2>
-            <div class="contact-grid">
-                <div class="steps-card fade-in">
-                    <h3>📋 Tahapan Pendaftaran</h3>
-                    <ol>
-                        <li>Klik tombol "Daftar Sekarang" untuk menuju link pendaftaran</li>
-                        <li>Isi formulir pendaftaran online</li>
-                        <li>Serahkan bukti pembayaran</li>
-                        <li>Ikuti tes seleksi</li>
-                        <li>Daftar ulang jika diterima</li>
-                    </ol>
-                    <div style="text-align: center; margin-top: 1.5rem;">
-                        <a href="https://forms.gle/mSdwF1ryhwFZVzjF6" target="_blank" class="cta-button">Daftar Sekarang</a>
-                    </div>
-                </div>
-                <div class="contact-info fade-in">
-                    <h3>Informasi Kontak</h3>
-                    <div class="contact-item">
-                        <div class="contact-icon">🗺️</div>
-                        <div>
-                            <strong>Alamat Google Maps:</strong><br>
-                        <a href="https://maps.app.goo.gl/uSuB7EQCVBg17SuZ8" target="_blank" style="color:#2c5530;text-decoration:underline;">
-                                    Kampung Tri Mukti Jaya<br>
-                                    Kec. Banjar Agung, Kab. Tulang Bawang<br>
-                                    Lampung 34682
-                                </a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📱</div>
-                        <div>
-                            <strong>Hubungi kami melalui WhatsApp:</strong><br>
-                            <a href="https://wa.me/6282258588514" target="_blank" style="color:#2c5530;text-decoration:underline;">
-                                0822 5858 8514 (Ustadz Ibnu)
-                            </a><br>
-                            <a href="https://wa.me/6281373145426" target="_blank" style="color:#2c5530;text-decoration:underline;">
-                                0813 7314 5426 (Ustadz Andri)
-                             </a>
-                        </div>
-                    </div>
+    <!-- =====================================================================
+         Section 4: 4 Pilar Program
+         ===================================================================== -->
+    <section class="section section-bg-white" id="program">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="section-badge">Kurikulum Terpadu</span>
+          <h2 class="section-title">4 Pilar <span>Program</span></h2>
+          <p class="section-desc">Pondasi kurikulum komprehensif untuk mencetak santriwati berilmu dan bertakwa.</p>
+        </div>
+
+        <div class="programs-grid">
+          <div class="card program-card fade-up">
+            <div class="card-img-wrapper">
+              <img src="assets/img/program-tahfidz.webp" alt="Program Tahfidz Al-Qur'an" class="card-photo" loading="lazy">
+            </div>
+            <div class="card-content">
+              <h3>Tahfidz Al-Qur'an</h3>
+              <p>Menghafal Al-Qur'an dengan metode mutqin yang disiplin, terukur, dan dibimbing langsung oleh ustadzah berpengalaman.</p>
+            </div>
+          </div>
+
+          <div class="card program-card fade-up">
+            <div class="card-img-wrapper">
+              <img src="assets/img/program-tahsin.webp" alt="Program Tahsin Al-Qur'an" class="card-photo" loading="lazy">
+            </div>
+            <div class="card-content">
+              <h3>Tahsin Al-Qur'an</h3>
+              <p>Membaca sesuai kaidah tajwid, makharijul huruf, dan sifat huruf yang benar sebelum dan selama proses hafalan.</p>
+            </div>
+          </div>
+
+          <div class="card program-card fade-up">
+            <div class="card-img-wrapper">
+              <img src="assets/img/program-diniyah.webp" alt="Program Ilmu Diniyah" class="card-photo" loading="lazy">
+            </div>
+            <div class="card-content">
+              <h3>Ilmu Diniyah</h3>
+              <p>Studi Fiqh, Hadits, Tafsir, dan Aqidah Ahlussunnah wal Jama'ah sesuai pemahaman Salafush Shalih.</p>
+            </div>
+          </div>
+
+          <div class="card program-card fade-up">
+            <div class="card-img-wrapper">
+              <img src="assets/img/program-bahasa-arab.webp" alt="Program Bahasa Arab" class="card-photo" loading="lazy">
+            </div>
+            <div class="card-content">
+              <h3>Bahasa Arab</h3>
+              <p>Pembelajaran bahasa Arab intensif untuk memahami makna ayat Al-Qur'an dan literatur kitab para ulama.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         Section 4: Fasilitas & Lingkungan
+         ===================================================================== -->
+    <section class="section section-bg-cream" id="fasilitas">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="section-badge">Sarana &amp; Prasarana</span>
+          <h2 class="section-title">Lingkungan &amp; <span>Fasilitas</span></h2>
+          <p class="section-desc">Suasana asri dan terjaga yang dirancang untuk kenyamanan menghafal Al-Qur'an.</p>
+        </div>
+
+        <div class="facility-grid">
+          <div class="card facility-card fade-up">
+            <div class="card-img-wrapper">
+              <img src="assets/img/fasilitas-lingkungan.webp" alt="Lingkungan Asri & Masjid Pondok" class="card-photo" loading="lazy">
+            </div>
+            <div class="card-content">
+              <h3>Lingkungan Asri &amp; Masjid</h3>
+              <p>Area pondok yang hijau, sejuk, pepohonan rindang, dan masjid pondok sebagai pusat ibadah serta halaqah Qur'an.</p>
+            </div>
+          </div>
+
+          <div class="card facility-card fade-up">
+            <div class="card-img-wrapper">
+              <img src="assets/img/fasilitas-asrama.webp" alt="Gedung Asrama Mukim" class="card-photo" loading="lazy">
+            </div>
+            <div class="card-content">
+              <h3>Asrama Mukim Santriwati</h3>
+              <p>Santriwati wajib tinggal di asrama mukim terpadu yang bersih, tertib, dan terjaga keamanannya selama 24 jam.</p>
+            </div>
+          </div>
+
+          <div class="card facility-card fade-up">
+            <div class="card-img-wrapper">
+              <img src="assets/img/fasilitas-kamar.webp" alt="Kamar Santri Bersih & Nyaman" class="card-photo" loading="lazy">
+            </div>
+            <div class="card-content">
+              <h3>Kamar Tidur Bersih &amp; Rapi</h3>
+              <p>Fasilitas tempat tinggal yang sehat, bersih, dan nyaman demi menjaga kebugaran serta konsentrasi menghafal.</p>
+            </div>
+          </div>
+
+          <div class="card facility-card fade-up">
+            <div class="card-img-wrapper">
+              <img src="assets/img/fasilitas-pengawasan.webp" alt="Pengawasan & Pendampingan 24 Jam" class="card-photo" loading="lazy">
+            </div>
+            <div class="card-content">
+              <h3>Bimbingan 24 Jam &amp; Bebas Gadget</h3>
+              <p>Pendampingan penuh ustadzah dalam suasana ukhuwwah, steril dari distraksi gadget/medsos agar hafalan terjaga.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- =====================================================================
+         Section 8: Output Lulusan
+         ===================================================================== -->
+    <section class="section section-bg-white" id="output">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="section-badge">Profil Kelulusan</span>
+          <h2 class="section-title">Output <span>Lulusan</span></h2>
+          <p class="section-desc">Kualitas dan kepribadian putri Anda setelah menempuh pendidikan di PPTQ.</p>
+        </div>
+
+        <div class="output-grid">
+          <div class="card output-card fade-up">
+            <div class="output-icon">📖</div>
+            <div>
+              <h3>Hafidzah Mutqin</h3>
+              <p>Memiliki hafalan 30 Juz yang melekat kuat dan terjaga.</p>
+            </div>
+          </div>
+
+          <div class="card output-card fade-up">
+            <div class="output-icon">🔊</div>
+            <div>
+              <h3>Tajwid Benar</h3>
+              <p>Fasih melafalkan ayat dengan kaidah tajwid yang shahih.</p>
+            </div>
+          </div>
+
+          <div class="card output-card fade-up">
+            <div class="output-icon">🌿</div>
+            <div>
+              <h3>Akhlak Qur'ani</h3>
+              <p>Berakhlak mulia, berbakti kepada orang tua, dan santun.</p>
+            </div>
+          </div>
+
+          <div class="card output-card fade-up">
+            <div class="output-icon">🧠</div>
+            <div>
+              <h3>Ilmu Diniyah</h3>
+              <p>Memahami dasar-dasar fiqh ibadah, aqidah, dan hadits.</p>
+            </div>
+          </div>
+
+          <div class="card output-card fade-up">
+            <div class="output-icon">🌍</div>
+            <div>
+              <h3>Bahasa Arab</h3>
+              <p>Mampu memahami literatur dan kosakata Arab dasar.</p>
+            </div>
+          </div>
+
+          <div class="card output-card fade-up">
+            <div class="output-icon">🤝</div>
+            <div>
+              <h3>Ukhuwwah &amp; Mandiri</h3>
+              <p>Terbiasa hidup berjamaah, mandiri, dan berjiwa sosial.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         Section 9: Alur Pendaftaran
+         ===================================================================== -->
+    <section class="section section-bg-cream" id="alur">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="section-badge">Prosedur PSB</span>
+          <h2 class="section-title">Alur <span>Pendaftaran</span></h2>
+          <p class="section-desc">5 langkah mudah mendaftarkan putri Anda menjadi santriwati PPTQ.</p>
+        </div>
+
+        <div class="stepper-container">
+          <div class="card step-card fade-up">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Isi Formulir Online</h3>
+              <p>Klik tombol pendaftaran dan lengkapi data santriwati serta orang tua di formulir resmi.</p>
+            </div>
+          </div>
+
+          <div class="card step-card fade-up">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Bayar Biaya Formulir</h3>
+              <p>Membayar biaya pendaftaran administrasi sebesar Rp 200.000 via transfer bank.</p>
+            </div>
+          </div>
+
+          <div class="card step-card fade-up">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Siapkan Dokumen Lengkap</h3>
+              <p>Melengkapi berkas fotokopi ijazah, KK, KTP orang tua, pas foto, dan surat kesehatan.</p>
+            </div>
+          </div>
+
+          <div class="card step-card fade-up">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3>Ikuti Tes Seleksi</h3>
+              <p>Tes kemampuan membaca Al-Qur'an, daya ingat hafalan, dan wawancara santri &amp; wali.</p>
+            </div>
+          </div>
+
+          <div class="card step-card fade-up">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <h3>Daftar Ulang</h3>
+              <p>Melakukan registrasi ulang dan penyelesaian administrasi setelah dinyatakan diterima.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         Section 10: Persyaratan Dokumen
+         ===================================================================== -->
+    <section class="section section-bg-white" id="syarat">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="section-badge">Berkas &amp; Ketentuan</span>
+          <h2 class="section-title">Persyaratan <span>Pendaftaran</span></h2>
+          <p class="section-desc">Daftar persyaratan yang wajib dipenuhi oleh calon santriwati.</p>
+        </div>
+
+        <div class="req-grid">
+          <div class="req-item fade-up"><span class="icon">✓</span> <span>Sehat jasmani dan rohani</span></div>
+          <div class="req-item fade-up"><span class="icon">✓</span> <span>Usia minimal 12 tahun (SMP) / 15 tahun (SMA)</span></div>
+          <div class="req-item fade-up"><span class="icon">✓</span> <span>Memiliki keinginan kuat menghafal Al-Qur'an</span></div>
+          <div class="req-item fade-up"><span class="icon">✓</span> <span>Mengisi surat kesanggupan mentaati tata tertib</span></div>
+          <div class="req-item fade-up"><span class="icon">✓</span> <span>Fotokopi ijazah terakhir / rapor legalisir</span></div>
+          <div class="req-item fade-up"><span class="icon">✓</span> <span>Fotokopi Kartu Keluarga (KK) &amp; KTP Orang Tua</span></div>
+          <div class="req-item fade-up"><span class="icon">✓</span> <span>Pas foto berwarna 3x4 (3 lembar)</span></div>
+          <div class="req-item fade-up"><span class="icon">✓</span> <span>Surat keterangan sehat dari dokter / puskesmas</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         Section 11: Rincian Biaya
+         ===================================================================== -->
+    <section class="section section-bg-cream" id="biaya">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="section-badge">Investasi Akhirat</span>
+          <h2 class="section-title">Rincian <span>Biaya Masuk</span></h2>
+          <p class="section-desc">Transparan, terjangkau, dan bernilai jariyah untuk masa depan putri Anda.</p>
+        </div>
+
+        <div class="fee-wrapper">
+          <div class="fee-list">
+            <div class="fee-row fade-up">
+              <div>
+                <span class="fee-name">Sarana &amp; Prasarana (Sarpras)</span>
+                <span class="fee-desc">Satu kali selama masa pendidikan</span>
+              </div>
+              <span class="fee-amount">Rp 5.000.000</span>
+            </div>
+
+            <div class="fee-row fade-up">
+              <div>
+                <span class="fee-name">Kegiatan Santriwati</span>
+                <span class="fee-desc">Per tahun</span>
+              </div>
+              <span class="fee-amount">Rp 500.000</span>
+            </div>
+
+            <div class="fee-row fade-up">
+              <div>
+                <span class="fee-name">Kesehatan &amp; UKS</span>
+                <span class="fee-desc">Per tahun</span>
+              </div>
+              <span class="fee-amount">Rp 500.000</span>
+            </div>
+
+            <div class="fee-row fade-up">
+              <div>
+                <span class="fee-name">Seragam Pesantren</span>
+                <span class="fee-desc">Paket lengkap seragam</span>
+              </div>
+              <span class="fee-amount">Rp 1.000.000</span>
+            </div>
+
+            <div class="fee-row fade-up">
+              <div>
+                <span class="fee-name">Buku &amp; Modul Pembelajaran</span>
+                <span class="fee-desc">Buku materi diniyah &amp; tahfidz</span>
+              </div>
+              <span class="fee-amount">Rp 650.000</span>
+            </div>
+
+            <div class="fee-row fade-up">
+              <div>
+                <span class="fee-name">SPP Bulanan</span>
+                <span class="fee-desc">Makan, asrama &amp; pendidikan / bulan</span>
+              </div>
+              <span class="fee-amount">Rp 1.000.000</span>
+            </div>
+
+            <div class="fee-row fade-up">
+              <div>
+                <span class="fee-name">Biaya Formulir Pendaftaran</span>
+                <span class="fee-desc">Registrasi awal</span>
+              </div>
+              <span class="fee-amount">Rp 200.000</span>
+            </div>
+          </div>
+
+          <div class="fee-total-card fade-up">
+            <span class="fee-total-label">Total Biaya Masuk Awal</span>
+            <div class="fee-total-val">Rp 8.850.000</div>
+            <a href="https://forms.gle/mSdwF1ryhwFZVzjF6" target="_blank" rel="noopener" class="btn">
+              Daftar Sekarang
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         Section 12: Periode Pendaftaran (Dynamic Status Badge)
+         ===================================================================== -->
+    <section class="section section-bg-white" id="periode">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="section-badge">Jadwal Seleksi</span>
+          <h2 class="section-title">Periode <span>Pendaftaran</span></h2>
+          <p class="section-desc">Jangan sampai terlewatkan! Kuota penerimaan santriwati terbatas.</p>
+        </div>
+
+        <div class="period-grid">
+          <div class="card period-card fade-up">
+            <div class="period-header">
+              <span class="period-title">Gelombang I</span>
+              <span class="period-badge" id="badgeGelombang1">Memuat Status...</span>
+            </div>
+            <div class="period-dates">01 November 2026 – 31 Januari 2027</div>
+            <p class="section-desc">Disarankan mendaftar pada Gelombang I untuk kepastian ketersediaan kuota asrama.</p>
+          </div>
+
+          <div class="card period-card fade-up">
+            <div class="period-header">
+              <span class="period-title">Gelombang II</span>
+              <span class="period-badge" id="badgeGelombang2">Memuat Status...</span>
+            </div>
+            <div class="period-dates">01 Februari 2027 – 30 Juni 2027</div>
+            <p class="section-desc">Gelombang II dibuka selama sisa kuota santriwati masih tersedia.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         Section 13: Brosur Pesantren (Touch Lightbox)
+         ===================================================================== -->
+    <section class="section section-bg-cream" id="brosur">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="section-badge">Dokumen Resmi</span>
+          <h2 class="section-title">Brosur <span>Pesantren</span></h2>
+          <p class="section-desc">Ketuk brosur untuk melihat gambar lebih besar dan jelas.</p>
+        </div>
+
+        <div class="brochure-grid">
+          <div class="brochure-card fade-up" role="button" tabindex="0" aria-label="Buka Brosur Halaman 1">
+            <img src="assets/img/Brosur1.png" alt="Brosur Halaman 1 PPTQ Jamal Yusuf Al-Haddad" loading="lazy" width="600" height="850">
+            <div class="brochure-overlay">
+              <span>Brosur Halaman 1</span>
+              <span>🔍 Perbesar</span>
+            </div>
+          </div>
+
+          <div class="brochure-card fade-up" role="button" tabindex="0" aria-label="Buka Brosur Halaman 2">
+            <img src="assets/img/Brosur2.png" alt="Brosur Halaman 2 PPTQ Jamal Yusuf Al-Haddad" loading="lazy" width="600" height="850">
+            <div class="brochure-overlay">
+              <span>Brosur Halaman 2</span>
+              <span>🔍 Perbesar</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         Section 14: Kontak & Informasi
+         ===================================================================== -->
+    <section class="section section-bg-white" id="kontak">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="section-badge">Hubungi Kami</span>
+          <h2 class="section-title">Informasi &amp; <span>Kontak</span></h2>
+          <p class="section-desc">Kami siap melayani pertanyaan seputar pendaftaran santriwati baru.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="card contact-card fade-up">
             <div class="contact-item">
-                <div class="contact-icon">📘</div>
-                <div>
-                    <strong>Facebook:</strong><br>
-                    <a href="https://www.facebook.com/pptq.jamalyusufalhaddad" target="_blank" style="color:#2c5530;text-decoration:underline;">
-                        PPTQ Jamal Yusuf Al-Haddad
-                    </a>
-                </div>
+              <div class="contact-icon">📍</div>
+              <div class="contact-details">
+                <h4>Alamat Pesantren</h4>
+                <a href="https://maps.app.goo.gl/uSuB7EQCVBg17SuZ8" target="_blank" rel="noopener">
+                  Kampung Tri Mukti Jaya, Kec. Banjar Agung, Kab. Tulang Bawang, Lampung 34682
+                </a>
+              </div>
             </div>
+
             <div class="contact-item">
-                <div class="contact-icon">📷</div>
-                <div>
-                    <strong>Instagram:</strong><br>
-                    <a href="https://instagram.com/pptq.jamalyusufalhaddad" target="_blank" style="color:#2c5530;text-decoration:underline;">
-                        PPTQ Jamal Yusuf Al-Haddad
-                    </a>
-                </div>
+              <div class="contact-icon">💬</div>
+              <div class="contact-details">
+                <h4>WhatsApp Ustadz Ibnu</h4>
+                <a href="https://wa.me/6282258588514" target="_blank" rel="noopener">
+                  0822 5858 8514
+                </a>
+              </div>
             </div>
-    </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Pusat Pendidikan Tahfidzul Qur'an Jamal Yusuf Al-Haddad</p>
-            <p>&copy; Jamal's Developer</p>
+            <div class="contact-item">
+              <div class="contact-icon">💬</div>
+              <div class="contact-details">
+                <h4>WhatsApp Ustadz Andri</h4>
+                <a href="https://wa.me/6281373145426" target="_blank" rel="noopener">
+                  0813 7314 5426
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card contact-card fade-up">
+            <div class="contact-item">
+              <div class="contact-icon">📷</div>
+              <div class="contact-details">
+                <h4>Instagram Resmi</h4>
+                <a href="https://instagram.com/pptq.jamalyusufalhaddad" target="_blank" rel="noopener">
+                  @pptq.jamalyusufalhaddad
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">📘</div>
+              <div class="contact-details">
+                <h4>Facebook</h4>
+                <a href="https://www.facebook.com/pptq.jamalyusufalhaddad" target="_blank" rel="noopener">
+                  PPTQ Jamal Yusuf Al-Haddad
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">🌐</div>
+              <div class="contact-details">
+                <h4>Website Resmi</h4>
+                <a href="https://pptqjamalyusuf.github.io/">
+                  pptqjamalyusuf.github.io
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
+  </main>
 
-    <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+  <!-- =======================================================================
+       Footer
+       ======================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-quote" lang="ar">وَلَقَدْ يَسَّرْنَا الْقُرْآنَ لِلذِّكْرِ فَهَلْ مِن مُّدَّكِرٍ</p>
+      <p class="footer-quote-trans">"Dan sungguh telah Kami mudahkan Al-Qur'an untuk peringatan, maka adakah orang yang mengambil pelajaran?" (QS. Al-Qamar: 17)</p>
+      <p class="footer-copy">&copy; 2026 PPTQ Jamal Yusuf Al-Haddad. Hak Cipta Dilindungi.</p>
+    </div>
+  </footer>
 
-        // Fade in animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+  <!-- =======================================================================
+       Sticky Bottom Bar for Mobile Phone (Appears Past Hero)
+       ======================================================================= -->
+  <aside class="mobile-bottom-bar" id="mobileBottomBar" aria-label="Aksi Cepat Mobile">
+    <a href="https://forms.gle/mSdwF1ryhwFZVzjF6" target="_blank" rel="noopener" class="btn btn-primary">
+      Daftar Sekarang
+    </a>
+    <a href="https://wa.me/6282258588514" target="_blank" rel="noopener" class="btn btn-whatsapp">
+      WhatsApp
+    </a>
+  </aside>
 
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
+  <!-- Floating WhatsApp Action (Desktop Only) -->
+  <a href="https://wa.me/6282258588514" target="_blank" rel="noopener" class="desktop-wa-fab" aria-label="Hubungi kami via WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-5.46-4.45-9.92-9.91-9.92zM12.04 20.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31c-.82-1.31-1.26-2.83-1.26-4.38 0-4.54 3.7-8.24 8.24-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.54-3.7 8.24-8.23 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.43s-.56-1.35-.77-1.85c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.07s.89 2.4 1.02 2.57c.12.17 1.76 2.68 4.26 3.76.6.26 1.06.41 1.42.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.3z"/>
+    </svg>
+  </a>
 
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
+  <!-- =======================================================================
+       Brosur Lightbox Modal
+       ======================================================================= -->
+  <div class="lightbox-modal" id="lightboxModal" aria-hidden="true" role="dialog" aria-label="Tampilan Besar Brosur">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Tutup brosur">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Brosur Sebelumnya">&#10094;</button>
+    <div class="lightbox-content">
+      <img src="assets/img/Brosur1.png" alt="Brosur Pesantren" class="lightbox-img" id="lightboxImg">
+    </div>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Brosur Selanjutnya">&#10095;</button>
+  </div>
+
+  <!-- Main JavaScript Logic (Deferred for Performance) -->
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
