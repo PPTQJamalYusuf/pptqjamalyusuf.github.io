@@ -292,7 +292,7 @@ button {
 }
 
 .brand-name {
-  font-size: 1.05rem;
+  font-size: clamp(0.92rem, 3.2vw, 1.05rem);
   font-weight: 800;
   line-height: 1.15;
 }
@@ -879,23 +879,45 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   4. Empat Pilar Program & 5. Fasilitas & Lingkungan (Photo Cards)
+   4. Empat Pilar Program & 5. Fasilitas & Lingkungan (Mobile 2 Kolom Grid)
    -------------------------------------------------------------------------- */
 .programs-grid,
 .facility-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.25rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+@media (min-width: 480px) {
+  .programs-grid,
+  .facility-grid {
+    gap: 14px;
+  }
+}
+
+@media (min-width: 768px) {
+  .programs-grid,
+  .facility-grid {
+    gap: 1.5rem;
+  }
 }
 
 .card-img-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 10;
-  border-radius: var(--radius-sm);
+  aspect-ratio: 16 / 11;
+  border-radius: 10px;
   overflow: hidden;
-  margin-bottom: 1.15rem;
+  margin-bottom: 0.75rem;
   background-color: var(--orange-soft);
+}
+
+@media (min-width: 768px) {
+  .card-img-wrapper {
+    aspect-ratio: 16 / 10;
+    border-radius: var(--radius-sm);
+    margin-bottom: 1.15rem;
+  }
 }
 
 .card-photo {
@@ -912,29 +934,22 @@ button {
   }
 }
 
-.card-badge-overlay {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: rgba(18, 13, 10, 0.76);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #FFA569;
-  font-size: 0.72rem;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: var(--radius-pill);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  letter-spacing: 0.3px;
-}
-
 .program-card,
 .facility-card {
   display: flex;
   flex-direction: column;
-  padding: 1.25rem;
+  padding: 0.85rem 0.75rem;
   border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+@media (min-width: 768px) {
+  .program-card,
+  .facility-card {
+    padding: 1.25rem;
+    border-radius: var(--radius-lg);
+  }
 }
 
 @media (hover: hover) {
@@ -948,18 +963,35 @@ button {
 
 .program-card h3,
 .facility-card h3 {
-  font-size: 1.18rem;
+  font-size: 0.95rem;
   font-weight: 800;
   color: var(--ink);
-  margin-bottom: 0.45rem;
-  line-height: 1.3;
+  margin-bottom: 0.25rem;
+  line-height: 1.25;
+}
+
+@media (min-width: 768px) {
+  .program-card h3,
+  .facility-card h3 {
+    font-size: 1.18rem;
+    margin-bottom: 0.45rem;
+    line-height: 1.3;
+  }
 }
 
 .program-card p,
 .facility-card p {
   color: var(--muted);
-  font-size: 0.94rem;
-  line-height: 1.6;
+  font-size: 0.80rem;
+  line-height: 1.45;
+}
+
+@media (min-width: 768px) {
+  .program-card p,
+  .facility-card p {
+    font-size: 0.94rem;
+    line-height: 1.6;
+  }
 }
 
 
