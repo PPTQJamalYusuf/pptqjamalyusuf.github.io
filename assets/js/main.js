@@ -7,8 +7,7 @@
 const PSB = {
   tahunAjaran: "2027/2028",
   linkFormulir: "https://forms.gle/mSdwF1ryhwFZVzjF6",
-  waIbnu: "6282258588514",
-  waAndri: "6281373145426",
+  waAdmin: "6285111840820",
   gelombang1: {
     nama: "Gelombang I",
     mulai: "2026-11-07",
