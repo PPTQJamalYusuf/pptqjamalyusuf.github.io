@@ -42,7 +42,9 @@
 /* --------------------------------------------------------------------------
    Reset & Base Styles (Mobile-First 360px+)
    -------------------------------------------------------------------------- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -59,9 +61,11 @@ body {
   background-color: var(--cream);
   color: var(--ink);
   line-height: 1.6;
-  font-size: 1rem; /* 16px min */
+  font-size: 1rem;
+  /* 16px min */
   overflow-x: hidden;
-  padding-bottom: var(--bottom-bar-height); /* Prevent sticky bottom bar from covering content on mobile */
+  padding-bottom: var(--bottom-bar-height);
+  /* Prevent sticky bottom bar from covering content on mobile */
   -webkit-font-smoothing: antialiased;
 }
 
@@ -213,10 +217,12 @@ button:active,
     transform: translateY(-2px);
     box-shadow: 0 8px 22px rgba(232, 94, 5, 0.4);
   }
+
   .btn-secondary:hover {
     background-color: var(--orange-soft);
     transform: translateY(-2px);
   }
+
   .btn-whatsapp:hover {
     background-color: #20b858;
     transform: translateY(-2px);
@@ -405,7 +411,7 @@ button:active,
   overflow: hidden;
   padding-top: 84px;
   padding-bottom: 2.75rem;
-  background: 
+  background:
     radial-gradient(circle at 90% 12%, rgba(232, 94, 5, 0.08) 0%, transparent 45%),
     radial-gradient(circle at 10% 88%, rgba(253, 240, 230, 0.7) 0%, transparent 50%),
     linear-gradient(180deg, #FFFFFF 0%, #FAF8F5 100%);
@@ -419,6 +425,219 @@ button:active,
     align-items: center;
     padding-top: 125px;
     padding-bottom: 4rem;
+  }
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* --------------------------------------------------------------------------
+   Hero Photo Landing Petals (Efek Kelopak Jatuh, Nempel di Foto & Menghilang)
+   -------------------------------------------------------------------------- */
+.photo-petals-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 2; /* Berada persis di atas hero-media-img (z-index: 1) */
+  border-radius: 16px;
+}
+
+.landing-petal {
+  position: absolute;
+  top: -24px;
+  width: 16px;
+  height: 22px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(254, 215, 170, 0.92) 45%, rgba(232, 94, 5, 0.8) 100%);
+  border-radius: 50% 0 50% 50%;
+  opacity: 0;
+  will-change: transform, opacity, filter;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Petal 1: Melayang dari kiri atas -> Mendarat di area kiri tengah foto -> Nempel -> Larut memudar */
+.landing-petal.lp1 {
+  left: 20%;
+  width: 15px;
+  height: 21px;
+  animation: petalLand1 8.5s infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes petalLand1 {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0) rotate(15deg) rotateY(0deg) scale(0.9);
+  }
+  15% {
+    opacity: 0.85;
+  }
+  48% {
+    /* Sentuhan pertama mendarat di permukaan foto */
+    transform: translate3d(18px, 140px, 0) rotate(65deg) rotateY(180deg) scale(1.08);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
+  }
+  54% {
+    /* Nempel stabil di foto */
+    transform: translate3d(20px, 142px, 0) rotate(60deg) rotateY(180deg) scale(1);
+    opacity: 0.95;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
+  }
+  78% {
+    /* Bertahan nempel */
+    transform: translate3d(20px, 142px, 0) rotate(60deg) rotateY(180deg) scale(1);
+    opacity: 0.95;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
+  }
+  92% {
+    /* Menghilang / larut lembut */
+    opacity: 0;
+    transform: translate3d(22px, 145px, 0) rotate(65deg) scale(0.8);
+    filter: blur(3px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+}
+
+/* Petal 2: Melayang dari kanan -> Mendarat di area tengah foto -> Nempel -> Menghilang */
+.landing-petal.lp2 {
+  left: 55%;
+  width: 18px;
+  height: 25px;
+  animation: petalLand2 9.5s infinite;
+  animation-delay: 2.5s;
+}
+
+@keyframes petalLand2 {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0) rotate(-25deg) rotateY(0deg);
+  }
+  15% {
+    opacity: 0.9;
+  }
+  46% {
+    transform: translate3d(-25px, 190px, 0) rotate(105deg) rotateY(180deg) scale(1.08);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
+  }
+  52% {
+    /* Nempel */
+    transform: translate3d(-23px, 192px, 0) rotate(100deg) rotateY(180deg) scale(1);
+    opacity: 0.95;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.35));
+  }
+  78% {
+    transform: translate3d(-23px, 192px, 0) rotate(100deg) rotateY(180deg) scale(1);
+    opacity: 0.95;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.35));
+  }
+  92% {
+    opacity: 0;
+    transform: translate3d(-21px, 195px, 0) scale(0.8);
+    filter: blur(3px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+}
+
+/* Petal 3: Melayang dari kanan atas -> Mendarat di kanan atas foto */
+.landing-petal.lp3 {
+  left: 72%;
+  width: 13px;
+  height: 18px;
+  animation: petalLand3 8s infinite;
+  animation-delay: 4.8s;
+}
+
+@keyframes petalLand3 {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0) rotate(40deg);
+  }
+  15% {
+    opacity: 0.85;
+  }
+  45% {
+    transform: translate3d(-45px, 95px, 0) rotate(135deg) rotateY(180deg) scale(1.06);
+  }
+  50% {
+    /* Nempel */
+    transform: translate3d(-43px, 97px, 0) rotate(130deg) rotateY(180deg) scale(1);
+    opacity: 0.95;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  }
+  76% {
+    transform: translate3d(-43px, 97px, 0) rotate(130deg) scale(1);
+    opacity: 0.95;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  }
+  90% {
+    opacity: 0;
+    transform: translate3d(-41px, 100px, 0) scale(0.8);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+}
+
+/* Petal 4: Melayang dari kiri -> Mendarat di area bawah foto */
+.landing-petal.lp4 {
+  left: 32%;
+  width: 16px;
+  height: 22px;
+  animation: petalLand4 10s infinite;
+  animation-delay: 6.8s;
+}
+
+@keyframes petalLand4 {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0) rotate(-10deg);
+  }
+  15% {
+    opacity: 0.85;
+  }
+  48% {
+    transform: translate3d(40px, 230px, 0) rotate(80deg) rotateY(180deg) scale(1.08);
+  }
+  54% {
+    /* Nempel */
+    transform: translate3d(42px, 232px, 0) rotate(75deg) rotateY(180deg) scale(1);
+    opacity: 0.95;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.32));
+  }
+  78% {
+    transform: translate3d(42px, 232px, 0) rotate(75deg) scale(1);
+    opacity: 0.95;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.32));
+  }
+  92% {
+    opacity: 0;
+    transform: translate3d(44px, 235px, 0) scale(0.8);
+    filter: blur(3px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-petal {
+    animation: none;
+    display: none;
   }
 }
 
@@ -527,9 +746,20 @@ button:active,
 }
 
 @keyframes pulse {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
 }
 
 .hero-bismillah {
@@ -756,17 +986,32 @@ button:active,
   align-items: center;
 }
 
+/* Mobile-first: Gambar di atas (order: 1), teks di bawah (order: 2) */
+.about-image-col {
+  order: 1;
+}
+
+.about-text-col {
+  order: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
 @media (min-width: 992px) {
   .about-grid {
     grid-template-columns: 1.05fr 0.95fr;
     gap: 3.5rem;
   }
-}
 
-.about-text-col {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  /* Desktop: Teks di kolom kiri (order: 1), gambar di kolom kanan (order: 2) */
+  .about-text-col {
+    order: 1;
+  }
+
+  .about-image-col {
+    order: 2;
+  }
 }
 
 .about-block {
@@ -816,7 +1061,8 @@ button:active,
   position: absolute;
   left: 0;
   top: 0;
-  color: var(--orange); /* Checkmark orange selaras tema utama */
+  color: var(--orange);
+  /* Checkmark orange selaras tema utama */
   font-weight: 800;
   font-size: 1.15rem;
   line-height: 1.35;
@@ -859,6 +1105,7 @@ button:active,
 }
 
 @media (min-width: 480px) {
+
   .programs-grid,
   .facility-grid {
     gap: 14px;
@@ -866,6 +1113,7 @@ button:active,
 }
 
 @media (min-width: 768px) {
+
   .programs-grid,
   .facility-grid {
     gap: 1.5rem;
@@ -908,6 +1156,8 @@ button:active,
 .facility-card {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   padding: 0.85rem 0.75rem;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
@@ -915,6 +1165,7 @@ button:active,
 }
 
 @media (min-width: 768px) {
+
   .program-card,
   .facility-card {
     padding: 1.25rem;
@@ -923,6 +1174,7 @@ button:active,
 }
 
 @media (hover: hover) {
+
   .program-card:hover,
   .facility-card:hover {
     transform: translateY(-4px);
@@ -931,21 +1183,34 @@ button:active,
   }
 }
 
+.program-card .card-content,
+.facility-card .card-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  flex: 1;
+}
+
 .program-card h3,
 .facility-card h3 {
   font-size: 0.95rem;
   font-weight: 800;
   color: var(--ink);
-  margin-bottom: 0.25rem;
-  line-height: 1.25;
+  margin-bottom: 0;
+  line-height: 1.3;
+  text-align: center;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
+
   .program-card h3,
   .facility-card h3 {
-    font-size: 1.18rem;
-    margin-bottom: 0.45rem;
-    line-height: 1.3;
+    font-size: 1.15rem;
+    margin-bottom: 0;
+    line-height: 1.35;
   }
 }
 
@@ -957,6 +1222,7 @@ button:active,
 }
 
 @media (min-width: 768px) {
+
   .program-card p,
   .facility-card p {
     font-size: 0.94rem;
@@ -1730,7 +1996,7 @@ button:active,
   max-height: 85vh;
   object-fit: contain;
   border-radius: var(--radius-sm);
-  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   user-select: none;
   transition: transform 0.2s ease;
 }
@@ -1769,8 +2035,13 @@ button:active,
   z-index: 2005;
 }
 
-.lightbox-prev { left: 16px; }
-.lightbox-next { right: 16px; }
+.lightbox-prev {
+  left: 16px;
+}
+
+.lightbox-next {
+  right: 16px;
+}
 
 /* 14. Kontak & Footer */
 .contact-grid {
@@ -1972,12 +2243,16 @@ button:active,
 
 /* Reduced Motion Preference for Accessibility */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+
   .fade-up {
     opacity: 1 !important;
     transform: none !important;
@@ -2034,7 +2309,8 @@ button:active,
 /* Desktop (1024px+) */
 @media (min-width: 1024px) {
   body {
-    padding-bottom: 0; /* No sticky bottom bar needed on desktop */
+    padding-bottom: 0;
+    /* No sticky bottom bar needed on desktop */
   }
 
   .menu-toggle {
@@ -2083,7 +2359,8 @@ button:active,
     flex-direction: row;
   }
 
-  .visi-card, .misi-card {
+  .visi-card,
+  .misi-card {
     flex: 1;
   }
 
