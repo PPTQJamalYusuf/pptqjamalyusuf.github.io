@@ -11,15 +11,15 @@ const PSB = {
   waAndri: "6281373145426",
   gelombang1: {
     nama: "Gelombang I",
-    mulai: "2026-11-01",
-    selesai: "2027-01-31",
-    display: "1 Nov 2026 – 31 Jan 2027"
+    mulai: "2026-11-07",
+    selesai: "2028-01-14",
+    display: "07 November 2026 – 14 Januari 2028"
   },
   gelombang2: {
     nama: "Gelombang II",
-    mulai: "2027-02-01",
-    selesai: "2027-06-30",
-    display: "1 Feb – 30 Jun 2027"
+    mulai: "2028-02-03",
+    selesai: "2028-06-30",
+    display: "03 Februari – 30 Juni 2028"
   },
   biayaAwal: 8850000
 };
@@ -27,6 +27,7 @@ const PSB = {
 document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
   initPSBStatus();
+  initFeeToggle();
   initMobileDrawer();
   initStickyBottomBar();
   initBrochureLightbox();
@@ -89,7 +90,7 @@ function initPSBStatus() {
     } else if (statusG2.className === 'active') {
       heroCardVal.textContent = `${PSB.gelombang2.nama}: Dibuka`;
     } else if (now < new Date(PSB.gelombang1.mulai)) {
-      heroCardVal.textContent = `Buka: 1 Nov 2026`;
+      heroCardVal.textContent = `Buka: 7 Nov 2026`;
     } else {
       heroCardVal.textContent = `Pendaftaran Dibuka`;
     }
@@ -97,7 +98,50 @@ function initPSBStatus() {
 }
 
 /**
- * 3. Mobile Fullscreen Hamburger Drawer Menu
+ * 3. Interactive Jenjang (SMP / SMA) Fee Toggle
+ */
+function initFeeToggle() {
+  const toggleGroup = document.getElementById('jenjangToggle');
+  const totalBoxSmp = document.getElementById('totalBoxSmp');
+  const totalBoxSma = document.getElementById('totalBoxSma');
+  const bukuAmount = document.getElementById('bukuAmount');
+  const bukuDesc = document.getElementById('bukuDesc');
+
+  function setTier(tier) {
+    if (toggleGroup) {
+      const buttons = toggleGroup.querySelectorAll('.fee-toggle-btn');
+      buttons.forEach(b => {
+        const match = b.getAttribute('data-tier') === tier;
+        b.classList.toggle('active', match);
+        b.setAttribute('aria-pressed', match ? 'true' : 'false');
+      });
+    }
+
+    if (tier === 'sma') {
+      if (bukuAmount) bukuAmount.textContent = 'Rp 950.000';
+      if (bukuDesc) bukuDesc.textContent = 'Buku modul diniyah dan Umum';
+      if (totalBoxSma) totalBoxSma.classList.add('active');
+      if (totalBoxSmp) totalBoxSmp.classList.remove('active');
+    } else {
+      if (bukuAmount) bukuAmount.textContent = 'Rp 650.000';
+      if (bukuDesc) bukuDesc.textContent = 'Buku modul diniyah dan Umum';
+      if (totalBoxSmp) totalBoxSmp.classList.add('active');
+      if (totalBoxSma) totalBoxSma.classList.remove('active');
+    }
+  }
+
+  if (toggleGroup) {
+    toggleGroup.querySelectorAll('.fee-toggle-btn').forEach(btn => {
+      btn.addEventListener('click', () => setTier(btn.getAttribute('data-tier')));
+    });
+  }
+
+  if (totalBoxSmp) totalBoxSmp.addEventListener('click', () => setTier('smp'));
+  if (totalBoxSma) totalBoxSma.addEventListener('click', () => setTier('sma'));
+}
+
+/**
+ * 4. Mobile Fullscreen Hamburger Drawer Menu
  */
 function initMobileDrawer() {
   const menuToggle = document.getElementById('menuToggle');

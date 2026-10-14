@@ -24,7 +24,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Core Stylesheet (Mobile-First with Cache Buster) -->
-  <link rel="stylesheet" href="assets/css/style.css?v=2027.3">
+  <link rel="stylesheet" href="assets/css/style.css?v=2027.9">
 </head>
 <body>
 
@@ -448,18 +448,10 @@
 
                 <div class="fee-row">
                   <div>
-                    <span class="fee-name">Kegiatan Santriwati</span>
-                    <span class="fee-desc">Per tahun</span>
+                    <span class="fee-name">Kegiatan &amp; Kesehatan (UKS)</span>
+                    <span class="fee-desc">Per tahun (kegiatan santriwati &amp; layanan kesehatan)</span>
                   </div>
-                  <span class="fee-amount">Rp 500.000</span>
-                </div>
-
-                <div class="fee-row">
-                  <div>
-                    <span class="fee-name">Kesehatan &amp; UKS</span>
-                    <span class="fee-desc">Per tahun</span>
-                  </div>
-                  <span class="fee-amount">Rp 500.000</span>
+                  <span class="fee-amount">Rp 1.000.000</span>
                 </div>
 
                 <div class="fee-row">
@@ -470,12 +462,18 @@
                   <span class="fee-amount">Rp 1.000.000</span>
                 </div>
 
-                <div class="fee-row">
-                  <div>
-                    <span class="fee-name">Buku &amp; Modul Pembelajaran</span>
-                    <span class="fee-desc">Buku materi diniyah &amp; tahfidz</span>
+                <div class="fee-row fee-row-interactive">
+                  <div class="fee-info-group">
+                    <div class="fee-title-row">
+                      <span class="fee-name">Buku &amp; Modul</span>
+                      <div class="fee-toggle-group" id="jenjangToggle" role="group" aria-label="Pilih Jenjang Sekolah">
+                        <button type="button" class="fee-toggle-btn fee-btn-smp active" data-tier="smp" aria-pressed="true">SMP</button>
+                        <button type="button" class="fee-toggle-btn fee-btn-sma" data-tier="sma" aria-pressed="false">SMA</button>
+                      </div>
+                    </div>
+                    <span class="fee-desc" id="bukuDesc">Buku modul diniyah dan Umum</span>
                   </div>
-                  <span class="fee-amount">Rp 650.000</span>
+                  <span class="fee-amount" id="bukuAmount">Rp 650.000</span>
                 </div>
 
                 <div class="fee-row">
@@ -497,7 +495,16 @@
 
               <div class="fee-total-card">
                 <span class="fee-total-label">Total Biaya Masuk Awal</span>
-                <div class="fee-total-val">Rp 8.850.000</div>
+                <div class="fee-dual-totals">
+                  <div class="fee-total-box fee-box-smp active" id="totalBoxSmp" role="button" tabindex="0" aria-label="Pilih Jenjang SMP">
+                    <span class="fee-tier-tag fee-tag-smp">SMP</span>
+                    <div class="fee-total-val">Rp 8.850.000</div>
+                  </div>
+                  <div class="fee-total-box fee-box-sma" id="totalBoxSma" role="button" tabindex="0" aria-label="Pilih Jenjang SMA">
+                    <span class="fee-tier-tag fee-tag-sma">SMA</span>
+                    <div class="fee-total-val">Rp 9.150.000</div>
+                  </div>
+                </div>
                 <a href="https://forms.gle/mSdwF1ryhwFZVzjF6" target="_blank" rel="noopener" class="btn">
                   Daftar Sekarang
                 </a>
@@ -522,7 +529,7 @@
                     <span class="period-title">Gelombang I</span>
                     <span class="period-badge" id="badgeGelombang1">Memuat Status...</span>
                   </div>
-                  <div class="period-dates">01 November 2026 – 31 Januari 2027</div>
+                  <div class="period-dates">07 November 2026 – 14 Januari 2028</div>
                   <p class="period-desc">Disarankan mendaftar pada Gelombang I untuk kepastian ketersediaan kuota asrama.</p>
                 </div>
 
@@ -531,7 +538,7 @@
                     <span class="period-title">Gelombang II</span>
                     <span class="period-badge" id="badgeGelombang2">Memuat Status...</span>
                   </div>
-                  <div class="period-dates">01 Februari 2027 – 30 Juni 2027</div>
+                  <div class="period-dates">03 Februari – 30 Juni 2028</div>
                   <p class="period-desc">Gelombang II dibuka selama sisa kuota santriwati masih tersedia.</p>
                 </div>
               </div>
@@ -837,6 +844,6 @@
   </div>
 
   <!-- Main JavaScript Logic (Deferred for Performance) -->
-  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/main.js?v=2027.5" defer></script>
 </body>
 </html>
