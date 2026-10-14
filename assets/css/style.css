@@ -1929,26 +1929,31 @@ button:active,
   transition: all 0.2s ease;
 }
 
-/* SMP Color Vibe (Islamic Emerald Green) */
+/* SMP Color Vibe (Islamic Emerald Green - Solid High Contrast) */
 .fee-box-smp {
-  background-color: rgba(21, 128, 61, 0.28);
-  border: 1.5px solid rgba(134, 239, 172, 0.35);
+  background-color: #14532d;
+  border: 1.5px solid #22c55e;
+  color: #ffffff;
+  opacity: 0.9;
 }
 
 .fee-box-smp:hover {
-  background-color: rgba(21, 128, 61, 0.38);
+  background-color: #166534;
+  opacity: 1;
 }
 
 .fee-box-smp.active {
-  background-color: rgba(21, 128, 61, 0.52);
+  background-color: #15803d;
   border-color: #86efac;
-  box-shadow: 0 4px 14px rgba(21, 128, 61, 0.4);
+  border-width: 2px;
+  opacity: 1;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
 }
 
 .fee-tag-smp {
-  background-color: #15803d;
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: #ffffff;
+  color: #15803d;
+  border: none;
 }
 
 /* SMA Color Vibe (Warm Terracotta & Amber) */
