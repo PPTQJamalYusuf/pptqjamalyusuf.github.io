@@ -11,14 +11,14 @@ const PSB = {
   gelombang1: {
     nama: "Gelombang I",
     mulai: "2026-11-07",
-    selesai: "2028-01-14",
-    display: "07 November 2026 – 14 Januari 2028"
+    selesai: "2027-01-14",
+    display: "07 November 2026 – 14 Januari 2027"
   },
   gelombang2: {
     nama: "Gelombang II",
-    mulai: "2028-02-03",
-    selesai: "2028-06-30",
-    display: "03 Februari – 30 Juni 2028"
+    mulai: "2027-02-03",
+    selesai: "2027-06-30",
+    display: "03 Februari – 30 Juni 2027"
   },
   biayaAwal: 8850000
 };
@@ -81,17 +81,17 @@ function initPSBStatus() {
     badgeG2.className = `period-badge ${statusG2.className}`;
   }
 
-  // Update hero floating card text
-  const heroCardVal = document.getElementById('heroCardVal');
-  if (heroCardVal) {
+  // Update hero badge pill text
+  const heroBadgeText = document.getElementById('heroBadgeText') || document.getElementById('heroCardVal');
+  if (heroBadgeText) {
     if (statusG1.className === 'active') {
-      heroCardVal.textContent = `${PSB.gelombang1.nama}: Dibuka`;
+      heroBadgeText.textContent = `PSB 2027/2028: Gelombang I Dibuka`;
     } else if (statusG2.className === 'active') {
-      heroCardVal.textContent = `${PSB.gelombang2.nama}: Dibuka`;
+      heroBadgeText.textContent = `PSB 2027/2028: Gelombang II Dibuka`;
     } else if (now < new Date(PSB.gelombang1.mulai)) {
-      heroCardVal.textContent = `Buka: 7 Nov 2026`;
+      heroBadgeText.textContent = `PSB 2027/2028 · Buka 7 Nov 2026`;
     } else {
-      heroCardVal.textContent = `Pendaftaran Dibuka`;
+      heroBadgeText.textContent = `Pendaftaran PSB Ditutup`;
     }
   }
 }
